@@ -23,7 +23,7 @@ const CharactersPage = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-between md:flex-row">
+      <div className="flex justify-between">
         <h1 className="text-3xl text-green-700 font-bold">Characters</h1>
         <button className="text-green-700" onClick={handleReload}>
           <FaRedo />

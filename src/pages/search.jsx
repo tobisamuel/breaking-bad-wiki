@@ -87,7 +87,7 @@ const SearchCharacters = () => {
   return (
     <>
       <div className="flex flex-col justify-between md:flex-row">
-        <h1 className="text-3xl text-green-700 font-bold">Characters</h1>
+        <h1 className="text-3xl text-green-700 font-bold">Search</h1>
 
         <form
           onSubmit={handleSearchSubmit}
