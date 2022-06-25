@@ -30,7 +30,7 @@ const CharactersPage = () => {
         </button>
       </div>
 
-      <div className="mt-6 grid grid-cols-1 gap-x-3 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-5 grid grid-cols-1 gap-x-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
         {isLoading && (
           <p className="mb-5 font-bold text-2xl text-amber-500 md:col-span-2 md:text-4xl lg:col-span-3">
             Loading...

@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="text-right p-2">
+      <nav className="text-right px-5 py-2">
         <div className="flex justify-between py-2 md:py-0 md:justify-end">
           <div
             className="flex items-center text-2xl text-green-700 md:hidden"
