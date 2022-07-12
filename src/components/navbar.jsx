@@ -19,29 +19,23 @@ const Navbar = () => {
             className="flex items-center text-2xl text-green-700 md:hidden"
             onClick={() => setShow(!show)}
           >
-            {show ? <FaTimes /> : <FaBars />}
+            <FaBars />
           </div>
-          <h1 className="font-extrabold text-2xl text-green-700 ">
+          <h1 className="font-extrabold text-2xl text-green-700">
             <Link to="/">Breaking Bad Wiki</Link>
           </h1>
         </div>
 
-        <ul
-          className={
-            show
-              ? "md:block text-amber-500 mt-2"
-              : "hidden md:block text-amber-500 mt-2"
-          }
-        >
+        <ul className="hidden md:block text-amber-500">
           {navigation.map((item, i) => (
             <li
-              className="text-xl font-bold hover:font-extrabold hover:text-amber-8100"
+              className="text-xl font-bold hover:font-extrabold hover:text-amber-800"
               key={i}
             >
               <NavLink
                 to={item.href}
                 className={({ isActive }) =>
-                  isActive ? "font-extrabold text-amber-800" : ""
+                  isActive && "font-extrabold text-amber-800"
                 }
                 onClick={() => setShow(!show)}
               >
@@ -50,6 +44,38 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+
+        {/* mobile menu */}
+        <div
+          className={`absolute top-0 left-0 min-h-screen w-full bg-white flex flex-col items-center space-y-60 transform ${
+            show ? "" : "-translate-y-full"
+          } transition duration-200 ease-in-out md:hidden`}
+        >
+          <div
+            className="w-full flex justify-start p-5 text-2xl text-green-700 md:hidden"
+            onClick={() => setShow(!show)}
+          >
+            <FaTimes />
+          </div>
+          <ul>
+            {navigation.map((item, i) => (
+              <li
+                className="text-xl text-amber-500 font-bold hover:font-extrabold hover:text-amber-8100"
+                key={i}
+              >
+                <NavLink
+                  to={item.href}
+                  className={({ isActive }) =>
+                    isActive && "font-extrabold text-amber-800"
+                  }
+                  onClick={() => setShow(!show)}
+                >
+                  <span>{item.name}</span>
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
       </nav>
     </div>
   );
